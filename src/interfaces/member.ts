@@ -29,7 +29,7 @@ const youcef: MemberData = {
   route: "youcef",
   name: "Youcef",
   lastname: "Belaib",
-  photo_url: "/pfps/Male.png",
+  photo_url: "/pfps/youcefpfp.JPG",
   role: "Team Leader and Software Engineer",
   city: "Algiers",
   country: "Algeria",
