@@ -25,6 +25,8 @@ export interface MemberData {
   projects: Project[] | null;
 }
 
+
+//create one like this for yourself
 const youcef: MemberData = {
   route: "youcef",
   name: "Youcef",
@@ -58,4 +60,6 @@ const youcef: MemberData = {
   projects: null,
 };
 
+
+//add ur constant here
 export const members = [youcef];
