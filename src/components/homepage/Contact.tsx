@@ -1,4 +1,38 @@
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement | null>(null); // ✅ type the ref
+  const [isSending, setIsSending] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => { // ✅ type the event
+    e.preventDefault();
+    setIsSending(true);
+
+    if (!formRef.current) return; // ✅ safeguard: formRef can be null
+
+    emailjs
+      .sendForm(
+        "team4-portfolio",     // your Service ID
+        "template_e0rgy8b",    // your Template ID
+        formRef.current,      // now correctly typed
+        'XK5zqrQTClI847sr6'    // your Public Key
+      )
+      .then(
+        () => {
+          setIsSending(false);
+          setSent(true);
+          formRef.current?.reset(); // ✅ use optional chaining
+        },
+        (error) => {
+          setIsSending(false);
+          console.error("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <section className="py-12">
       <div className="flex flex-col items-center text-center">
@@ -11,7 +45,7 @@ const Contact = () => {
       </div>
       <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="rounded-lg bg-white p-8 shadow-sm dark:bg-gray-800/50">
-          <form className="flex flex-col gap-6">
+          <form  ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-6">
             <div>
               <label
                 className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -22,6 +56,8 @@ const Contact = () => {
               <input
                 className="w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-gray-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
                 id="name"
+                required
+                name="user_name"
                 placeholder="Your Name"
                 type="text"
               />
@@ -36,8 +72,10 @@ const Contact = () => {
               <input
                 className="w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-gray-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
                 id="email"
+                name="user_email"
                 placeholder="you@example.com"
                 type="email"
+                required
               />
             </div>
             <div>
@@ -51,14 +89,16 @@ const Contact = () => {
                 className="w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-gray-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
                 id="message"
                 placeholder="Your message..."
+                name='message'
                 rows={4}
+                required
               ></textarea>
             </div>
             <button
               className="w-full rounded-lg bg-primary px-6 py-3 text-base font-bold text-white transition-colors hover:bg-primary/90"
               type="submit"
             >
-              Send Message
+              {isSending ? "Sending..." : sent ? "✅ Sent!" : "Send Message"}
             </button>
           </form>
         </div>
