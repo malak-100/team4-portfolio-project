@@ -59,7 +59,7 @@ const malak: MemberData = {
   {
     title: "Adam AGI",
     description:
-      "Adam AGI is a groundbreaking artificial general intelligence system — designed to reason, learn, and interact with the world in a fully autonomous way. It merges large-scale neural networks with real-time robotics control, making it one of the most ambitious AI implementations of 2026.",
+      "Adam AGI is a groundbreaking artificial general intelligence system — designed to reason, learn, and interact with the world in a fully autonomous way. first general intelligence, making it one of the breakthroughs of 2026.",
     photo_url: "/pfps/AdamWithCat.jpg"
   }
 ],
