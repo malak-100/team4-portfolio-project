@@ -63,7 +63,7 @@ const hind: MemberData = {
   route: "hind",
   name: "Hind",
   lastname: "Bennabi",
-  photo_url: "/pfps/individu.jpg",
+  photo_url: "/pfps/pfp_hind.jpg",
   role: "AI Student ",
   city: "Algiers",
   country: "Algeria",
