@@ -57,5 +57,18 @@ const youcef: MemberData = {
   ],
   projects: null,
 };
+const hind: MemberData = {
+  route: "hind",
+  name: "Hind",
+  lastname: "Bennabi",
+  photo_url: "/pfps/individu.jpg",
+  role: "AI Student ",
+  city: "Algiers",
+  country: "Algeria",
+  bio: "I am an enthusiastic AI student, passionate about learning and building projects",
+  skills: ["c++","python","html","css","php","figma","javascript"],
+  experiences: [],
+  projects: null,
+};
 
-export const members = [youcef];
+export const members = [youcef, hind];
