@@ -111,4 +111,72 @@ const hind: MemberData = {
   projects: null,
 };
 
-export const members = [youcef , hind, malak];
+const islam: MemberData = {
+  route: "islam",
+  name: "islam",
+  lastname: "Benali",
+  photo_url: "/pfps/islam.jpg",
+  role: "Software Engineer and Motion Designer",
+  city: "Algiers",
+  country: "Algeria",
+  bio: "Curious and detail-oriented software engineer merging logic and artistry — from RISC-V to motion graphics.",
+  skills: [
+    "RISC-V Assembly",
+    "C/C++",
+    "Qt",
+    "JavaScript",
+    "TypeScript",
+    "HTML",
+    "CSS",
+   
+    "TypeScript",
+    "React",
+    "Flutter",
+    "Python",
+    "Machine Learning",
+    "Data Science",
+    "After Effects",
+    "Motion Design",
+    "Git",
+    
+   
+    
+    
+    
+  ],
+  experiences: [
+    {
+      title: "AI and Data Science Student",
+      start_date: "2024",
+      end_date: "Present",
+      type: "study",
+    },
+    {
+      title: "Software Engineering Student",
+      start_date: "9/2023",
+      end_date: "Present",
+      type: "study",
+    },
+    {
+      title: "Motion Graphics Learner — Adobe After Effects",
+      start_date: "6/2025",
+      end_date: "Present",
+      type: "study",
+    },
+    {
+      title: "Independent Developer and Designer",
+      start_date: "2024",
+      end_date: "Present",
+      type: "work",
+    },
+  ],
+  projects:[ {
+      title: "AI-Based Job Matching System",
+      description:
+        "Developed a many-to-many AI job matching system using greedy search optimization for improved candidate-job pairing.",
+      photo_url: null,
+    },]
+};
+
+
+export const members = [youcef , hind, malak, islam];
