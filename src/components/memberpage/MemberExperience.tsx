@@ -7,7 +7,11 @@ const MemberExperience = ({ member }: { member: MemberData }) => {
         Experience
       </h2>
       <div className="relative border-l-2 border-gray-200 dark:border-gray-700 ml-4">
-        {member.experiences.map((experience) => (
+        
+        {
+          member.experiences.length>0 ? 
+        
+        member.experiences.map((experience) => (
           <div className="mb-8 ml-8">
             <span className="absolute flex items-center justify-center w-8 h-8 bg-primary rounded-full -left-4 ring-8 ring-background-light dark:ring-background-dark">
               <span className="material-symbols-outlined text-white text-lg">
@@ -21,7 +25,7 @@ const MemberExperience = ({ member }: { member: MemberData }) => {
               {experience.start_date} - {experience.end_date}
             </time>
           </div>
-        ))}
+        )) : <p  className="text-gray-600 dark:text-gray-400">No experiences added yet</p>}
       </div>
     </section>
   );

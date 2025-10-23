@@ -55,7 +55,7 @@ const youcef: MemberData = {
       type: "work",
     },
   ],
-  projects: null,
+  projects: [],
 };
 
 export const members = [youcef];
