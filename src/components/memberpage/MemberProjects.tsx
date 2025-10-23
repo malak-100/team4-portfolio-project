@@ -7,10 +7,13 @@ const MemberProjects = ({ member }: { member: MemberData }) => {
         Projects
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {member.projects && member.projects.length>0 ? (
-          member.projects.map((project) => (
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+        {member.projects && member.projects.length > 0 ? (
+          member.projects.map((project, index) => (
             <div
+              key={index}
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+            >
+              <div
                 className="w-full bg-gray-200 dark:bg-gray-700 aspect-video bg-cover bg-center"
                 style={{
                   backgroundImage: project.photo_url
