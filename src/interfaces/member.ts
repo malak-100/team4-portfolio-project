@@ -25,11 +25,13 @@ export interface MemberData {
   projects: Project[] | null;
 }
 
+
+//create one like this for yourself
 const youcef: MemberData = {
   route: "youcef",
   name: "Youcef",
   lastname: "Belaib",
-  photo_url: "/pfps/Male.png",
+  photo_url: "/pfps/youcefpfp.JPG",
   role: "Team Leader and Software Engineer",
   city: "Algiers",
   country: "Algeria",
@@ -55,7 +57,7 @@ const youcef: MemberData = {
       type: "work",
     },
   ],
-  projects: null,
+  projects: [],
 };
 const hind: MemberData = {
   route: "hind",
